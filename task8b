@@ -1,0 +1,19 @@
+def number_sequence(start, end, step=1):
+    current = start
+    if step > 0:
+        while current <= end:
+            yield current
+            current += step
+    else:
+        while current >= end:
+            yield current
+            current += step
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
+step = int(input("Enter the step value: "))
+if step == 0:
+    print("Step value cannot be zero.")
+else:
+    sequence_generator = number_sequence(start, end, step)
+    for number in sequence_generator:
+        print(number)
